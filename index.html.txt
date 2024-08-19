@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Välkkyvä Sivusto</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            transition: background-color 0.1s ease;
+        }
+
+        #text {
+            font-size: 2rem;
+            cursor: pointer;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="text">Sisu oot gay</div>
+
+<script>
+    let flashing = false;
+
+    document.getElementById("text").onclick = function() {
+        if (!flashing) {
+            flashing = true;
+            setInterval(() => {
+                document.body.style.backgroundColor = 
+                    document.body.style.backgroundColor === 'black' ? 'white' : 'black';
+            }, 100);
+        }
+    }
+</script>
+
+</body>
+</html>
